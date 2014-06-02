@@ -116,7 +116,6 @@ for i = 1:length(R);
     [SF_x(i,:), fval(i,1)] = quadprog(Q_sf, c, A,b, Aeq,beq,...
                                       lb,ub,[],options);
     SF_std(i,1)=(SF_x(i,:)*Q_sf*SF_x(i,:)')^.5;
-    SF_temp(i,1) = (2*fval(i,1))^(1/2);
 end
 
 % Plot the efficient frontiers of the three
