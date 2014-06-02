@@ -27,7 +27,6 @@ for i = 1:length(R);
     b = -R(i);
     
     [MVO_x(i,:), MVO_var(i,1)] = quadprog(Q, c, A, b,Aeq, beq, lb, ub, [], options);
-    MVO_std(i,1) = (2 * MVO_var(i,1)).^.5;
 end
 
 end

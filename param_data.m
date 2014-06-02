@@ -1,4 +1,4 @@
-function [ mu Q r_it ] = param_data(data, end_pred)
+function [ mu, Q, r_it ] = param_data(data, end_pred)
 %% DETERMINE EXPECTED RETURNS AND COVARIANCES FOR ASSETS
 % Input a matrix of time series data for the desired assets, as well as 
 % the number of days in the estimation horizon starting from day 1, and the

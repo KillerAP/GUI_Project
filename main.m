@@ -32,18 +32,36 @@ initial_wealth = 100000;
 
 end_pred = round(min_days * 0.75); % use the first 75% of days for parameter estimation
 
+diff_days = min_days - end_pred;
+
 %THe first line takes in the historical data and return the expected return into mu and the covariance matrix into Q
 %The second line does the same but for the market index
 
-h = {'MVO_with_time', 'one_period_MAD', 'one_period_MVO'};
+h = {'MVO_with_time', 'one_period_MAD', 'one_period_MVO', 'Single Factor'};
 
 for i = 1:size(h,2);
+    if strcmp(h{1,i}, 'Single Factor')
+       [SF_x, SF_var, projected_returns, projected_prices]=...
+           one_period_SF(data, market, min_days, end_pred, initial_wealth, desired_return_range);
+    end
     if strcmp(h{1,i}, 'one_period_MAD')
-       [MAD_x, MAD_var, projected_returns, projected_prices]=...
+       [MAD_x, MAD_var, projected_returns2, projected_prices]=...
            one_period_MAD(data, min_days, end_pred, initial_wealth, desired_return_range);
+    end
+    if strcmp(h{1,i}, 'one_period_MVO')
+       [MAD_x, MAD_var, projected_returns3, projected_prices]=...
+           one_period_MVO(data, min_days, end_pred, initial_wealth, desired_return_range);
     end
 end
 
+plot(1:length(projected_returns),projected_returns, 'r');
+hold all
+plot(1:length(projected_returns),projected_returns2, 'b');
+hold all
+plot(1:length(projected_returns),projected_returns3, 'k');
 
+market_price = market(end_pred:min_days,:);
+market_returns = market_price(2:diff_days + 1,:)./market_price(1:diff_days,:) - 1;
 
-plot(projected_returns);
+hold all
+plot(1:length(projected_returns),market_returns, 'g');
