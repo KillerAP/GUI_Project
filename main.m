@@ -27,6 +27,8 @@ end_date = '12-April-2014';
 [data, market, min_days] = retrieve_data(assets, market_name, start_date,...
     end_date);
 
+desired_return_range = 0.0007;
+initial_wealth = 100000;
 
 end_pred = round(min_days * 0.75); % use the first 75% of days for parameter estimation
 
@@ -36,5 +38,12 @@ end_pred = round(min_days * 0.75); % use the first 75% of days for parameter est
 h = {'MVO_with_time', 'one_period_MAD', 'one_period_MVO'};
 
 for i = 1:size(h,2);
-    if h(1,i) = 'MVO_with_time'
-        mvo_with_time(
+    if strcmp(h{1,i}, 'one_period_MAD')
+       [MAD_x, MAD_var, projected_returns, projected_prices]=...
+           one_period_MAD(data, min_days, end_pred, initial_wealth, desired_return_range);
+    end
+end
+
+
+
+plot(projected_returns);
