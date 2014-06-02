@@ -68,11 +68,8 @@ market_price = market(end_pred:min_days,:);
 market_returns = market_price(2:diff_days + 1,:)./market_price(1:diff_days,:) - 1;
 
 %Portfolio returns is green
-plot(pred_days,portfolio_returns, 'g')
+plot(pred_days,portfolio_returns, 'r')
 hold all
 %Market is blue
 plot(pred_days,market_returns, 'b')
-
-%75
-%76+1
-%77+1
+h = legend('MVO reoptimized per period', 'Market Return');
