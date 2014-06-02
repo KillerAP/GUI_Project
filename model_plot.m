@@ -1,6 +1,5 @@
-function [ output_args ] = model_plot( input_args )
-%MODEL_PLOT Summary of this function goes here
-%   Detailed explanation goes here
+function [ ] = model_plot( selected_model)
+
 
 
 end
