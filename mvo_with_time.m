@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-%added random comment
-%adding second random comment
-%a different random comment
-=======
->>>>>>> parent of f27a08d... 1. Added random comment
+%overwritten commits
 clear all
 clc 
 
