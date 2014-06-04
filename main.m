@@ -16,8 +16,8 @@ assets = {'DOL.TO', 'FFH.TO', 'HBC.TO', 'BA.TO', 'BB.TO', 'AC-B.TO', ...
 %Dollarama, , Hudson Bay company, Bell, blackberry, aircanada
 %RONA, pengrove
 
-market_name = '^GSPTSE';
-etf_name = 'XIC.TO';
+market_name = '^GSPTSE'; %S&P/TSX Capped Composite
+etf_name = 'XIC.TO'; %tracks the S&P/TSX Capped Composite Index
 
 start_date = '15-April-2013';
 end_date = '12-April-2014';
