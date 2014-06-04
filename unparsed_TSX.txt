@@ -1,0 +1,244 @@
+AGF Management Limited,AGF.B:TSX
+ARC Resources Ltd.,ARX:TSX
+ATCO Ltd.,ACO.X:TSX
+ATS Automation Tooling Systems Inc.,ATA:TSX
+Advantage Oil & Gas Ltd.,AAV:TSX
+Aecon Group Inc.,ARE:TSX
+Agnico Eagle Mines Limited,AEM:TSX
+Agrium Inc.,AGU:TSX
+Aimia Inc.,AIM:TSX
+Air Canada,AC.B:TSX
+Alacer Gold Corp.,ASR:TSX
+Alamos Gold Inc.,AGI:TSX
+Alaris Royalty Corp.,AD:TSX
+Algonquin Power & Utilities Corp.,AQN:TSX
+Alimentation Couche-Tard Inc.,ATD.B:TSX
+Allied Properties Real Estate Investment Trust,AP.UN:TSX
+AltaGas Ltd.,ALA:TSX
+Argonaut Gold Inc.,AR:TSX
+Artis Real Estate Investment Trust,AX.UN:TSX
+Athabasca Oil Corporation,ATH:TSX
+AuRico Gold Inc.,AUQ:TSX
+Avigilon Corporation,AVO:TSX
+B2Gold Corp.,BTO:TSX
+BCE Inc.,BCE:TSX
+BRP Inc.,DOO:TSX
+Badger Daylighting Ltd.,BAD:TSX
+Bank of Montreal,BMO:TSX
+Bank of Nova Scotia (The),BNS:TSX
+Bankers Petroleum Ltd.,BNK:TSX
+Barrick Gold Corporation,ABX:TSX
+Baytex Energy Corp.,BTE:TSX
+Bell Aliant Inc.,BA:TSX
+Bellatrix Exploration Ltd.,BXE:TSX
+Birchcliff Energy Ltd.,BIR:TSX
+Black Diamond Group Limited,BDI:TSX
+BlackBerry Limited,BB:TSX
+BlackPearl Resources Inc.,PXX:TSX
+Boardwalk Real Estate Investment Trust,BEI.UN:TSX
+Bombardier Inc.,BBD.B:TSX
+Bonavista Energy Corporation,BNP:TSX
+Bonterra Energy Corp.,BNE:TSX
+Brookfield Asset Management Inc.,BAM.A:TSX
+Brookfield Property Partners L.P.,BPY.UN:TSX
+Brookfield Renewable Energy Partners L.P.,BEP.UN:TSX
+CAE Inc.,CAE:TSX
+CCL Industries Inc.,CCL.B:TSX
+CGI Group Inc.,GIB.A:TSX
+CI Financial Corp.,CIX:TSX
+Calfrac Well Services Ltd.,CFW:TSX
+Calloway Real Estate Investment Trust,CWT.UN:TSX
+Cameco Corporation,CCO:TSX
+Canadian Apartment Properties Real Estate Investment Trust,CAR.UN:TSX
+Canadian Energy Services & Technology Corp.,CEU:TSX
+Canadian Imperial Bank Of Commerce,CM:TSX
+Canadian National Railway Company,CNR:TSX
+Canadian Natural Resources Limited,CNQ:TSX
+Canadian Oil Sands Limited,COS:TSX
+Canadian Pacific Railway Limited,CP:TSX
+Canadian Real Estate Investment Trust,REF.UN:TSX
+Canadian Tire Corporation Limited,CTC.A:TSX
+Canadian Utilities Limited,CU:TSX
+Canadian Western Bank,CWB:TSX
+Canexus Corporation,CUS:TSX
+Canfor Corporation,CFP:TSX
+Capital Power Corporation,CPX:TSX
+Capstone Mining Corp.,CS:TSX
+Catamaran Corporation,CCT:TSX
+Celestica Inc.,CLS:TSX
+Cenovus Energy Inc.,CVE:TSX
+Centerra Gold Inc.,CG:TSX
+Chartwell Retirement Residences,CSH.UN:TSX
+Chemtrade Logistics Income Fund,CHE.UN:TSX
+China Gold International Resources Corp. Ltd.,CGG:TSX
+Cineplex Inc.,CGX:TSX
+Cogeco Cable Inc.,CCA:TSX
+Cominar Real Estate Investment Trust,CUF.UN:TSX
+Constellation Software Inc.,CSU:TSX
+Corus Entertainment Inc.,CJR.B:TSX
+Cott Corporation,BCB:TSX
+Crescent Point Energy Corp.,CPG:TSX
+Crew Energy Inc.,CR:TSX
+Crombie Real Estate Investment Trust,CRR.UN:TSX
+DH Corporation,DH:TSX
+DREAM Unlimited Corp.,DRM:TSX
+Descartes Systems Group Inc. (The),DSG:TSX
+Detour Gold Corporation,DGC:TSX
+Dollarama Inc.,DOL:TSX
+Dominion Diamond Corporation,DDC:TSX
+Dorel Industries Inc.,DII.B:TSX
+Dream Global Real Estate Investment Trust,DRG.UN:TSX
+Dream Office Real Estate Investment Trust,D.UN:TSX
+Dundee Corporation,DC.A:TSX
+Eldorado Gold Corporation,ELD:TSX
+Element Financial Corporation,EFN:TSX
+Emera Incorporated,EMA:TSX
+Empire Company Limited,EMP.A:TSX
+Enbridge Inc.,ENB:TSX
+Enbridge Income Fund Holdings Inc.,ENF:TSX
+Encana Corporation,ECA:TSX
+Enerflex Ltd.,EFX:TSX
+Enerplus Corporation,ERF:TSX
+Ensign Energy Services Inc.,ESI:TSX
+Extendicare Inc.,EXE:TSX
+Fairfax Financial Holdings Limited,FFH:TSX
+Finning International Inc.,FTT:TSX
+First Capital Realty Inc.,FCR:TSX
+First Majestic Silver Corp.,FR:TSX
+First Quantum Minerals Ltd.,FM:TSX
+FirstService Corporation,FSV:TSX
+Fortis Inc.,FTS:TSX
+Fortuna Silver Mines Inc.,FVI:TSX
+Franco-Nevada Corporation,FNV:TSX
+Freehold Royalties Ltd.,FRU:TSX
+Genworth MI Canada Inc.,MIC:TSX
+George Weston Limited,WN:TSX
+Gibson Energy Inc.,GEI:TSX
+Gildan Activewear Inc.,GIL:TSX
+Goldcorp Inc.,G:TSX
+Gran Tierra Energy Inc.,GTE:TSX
+Granite Real Estate Investment Trust,GRT.UN:TSX
+Great-West Lifeco Inc.,GWO:TSX
+H&R Real Estate Investment Trust,HR.UN:TSX
+Home Capital Group Inc.,HCG:TSX
+Horizon North Logistics Inc.,HNL:TSX
+HudBay Minerals Inc.,HBM:TSX
+Hudson's Bay Company,HBC:TSX
+Husky Energy Inc.,HSE:TSX
+IAMGOLD Corporation,IMG:TSX
+IGM Financial Inc.,IGM:TSX
+Imperial Oil Limited,IMO:TSX
+Industrial Alliance Insurance and Financial Services Inc.,IAG:TSX
+Innergex Renewable Energy Inc.,INE:TSX
+Intact Financial Corporation,IFC:TSX
+Inter Pipeline Ltd.,IPL:TSX
+Interfor Corporation,IFP:TSX
+Intertape Polymer Group Inc.,ITP:TSX
+Ithaca Energy Inc.,IAE:TSX
+Jean Coutu Group (PJC) Inc. (The),PJC.A:TSX
+Just Energy Group Inc.,JE:TSX
+Kelt Exploration Ltd.,KEL:TSX
+Keyera Corp.,KEY:TSX
+Kinross Gold Corporation,K:TSX
+Labrador Iron Ore Royalty Corporation,LIF:TSX
+Laurentian Bank of Canada,LB:TSX
+Legacy Oil + Gas Inc.,LEG:TSX
+Lightstream Resources Ltd.,LTS:TSX
+Linamar Corporation,LNR:TSX
+Loblaw Companies Limited,L:TSX
+Lundin Mining Corporation,LUN:TSX
+MEG Energy Corp.,MEG:TSX
+MacDonald Dettwiler and Associates Ltd.,MDA:TSX
+Magna International Inc.,MG:TSX
+Major Drilling Group International Inc.,MDI:TSX
+Manitoba Telecom Services Inc.,MBT:TSX
+Manulife Financial Corporation,MFC:TSX
+Maple Leaf Foods Inc.,MFI:TSX
+Martinrea International Inc.,MRE:TSX
+Methanex Corporation,MX:TSX
+Metro Inc.,MRU:TSX
+Mullen Group Ltd.,MTL:TSX
+National Bank of Canada,NA:TSX
+Nevsun Resources Ltd.,NSU:TSX
+New Gold Inc.,NGD:TSX
+Newalta Corporation,NAL:TSX
+Norbord Inc.,NBD:TSX
+Northern Property Real Estate Investment Trust,NPR.UN:TSX
+Northland Power Inc.,NPI:TSX
+NovaGold Resources Inc.,NG:TSX
+NuVista Energy Ltd.,NVA:TSX
+ONEX Corporation,OCX:TSX
+OceanaGold Corporation,OGC:TSX
+Open Text Corporation,OTC:TSX
+Osisko Mining Corporation,OSK:TSX
+Pacific Rubiales Energy Corp.,PRE:TSX
+Pan American Silver Corp.,PAA:TSX
+Paramount Resources Ltd.,POU:TSX
+Parkland Fuel Corporation,PKI:TSX
+Pason Systems Inc.,PSI:TSX
+Pembina Pipeline Corporation,PPL:TSX
+Pengrowth Energy Corporation,PGF:TSX
+Penn West Petroleum Ltd.,PWT:TSX
+Peyto Exploration & Development Corp.,PEY:TSX
+Potash Corporation of Saskatchewan Inc.,POT:TSX
+Power Corporation of Canada,POW:TSX
+Power Financial Corporation,PWF:TSX
+Precision Drilling Corporation,PD:TSX
+Pretium Resources Inc.,PVG:TSX
+Progressive Waste Solutions Ltd.,BIN:TSX
+Quebecor Inc.,QBR.B:TSX
+RONA inc.,RON:TSX
+Raging River Exploration Inc.,RRX:TSX
+RioCan Real Estate Investment Trust,REI.UN:TSX
+Ritchie Bros. Auctioneers Incorporated,RBA:TSX
+Rogers Communications Inc.,RCI.B:TSX
+Royal Bank of Canada,RY:TSX
+Russel Metals Inc.,RUS:TSX
+SNC-Lavalin Group Inc.,SNC:TSX
+Saputo Inc.,SAP:TSX
+Savanna Energy Services Corp.,SVY:TSX
+Secure Energy Services Inc.,SES:TSX
+Semafo Inc.,SMF:TSX
+Shaw Communications Inc.,SJR.B:TSX
+ShawCor Ltd.,SCL:TSX
+Sherritt International Corporation,S:TSX
+Silver Standard Resources Inc.,SSO:TSX
+Silver Wheaton Corp.,SLW:TSX
+Silvercorp Metals Inc.,SVM:TSX
+Stantec Inc.,STN:TSX
+Sun Life Financial Inc.,SLF:TSX
+Suncor Energy Inc.,SU:TSX
+Superior Plus Corp.,SPB:TSX
+Surge Energy Inc.,SGY:TSX
+TELUS Corporation,T:TSX
+TMX Group Limited,X:TSX
+Tahoe Resources Inc.,THO:TSX
+Talisman Energy Inc.,TLM:TSX
+Teck Resources Limited,TCK.B:TSX
+The North West Company Inc.,NWC:TSX
+Thomson Reuters Corporation,TRI:TSX
+Tim Hortons Inc.,THI:TSX
+Torex Gold Resources Inc.,TXG:TSX
+Toromont Industries Ltd.,TIH:TSX
+Toronto-Dominion Bank (The),TD:TSX
+Tourmaline Oil Corp.,TOU:TSX
+TransAlta Corporation,TA:TSX
+TransCanada Corporation,TRP:TSX
+TransForce Inc.,TFI:TSX
+TransGlobe Energy Corporation,TGL:TSX
+Transcontinental Inc.,TCL.A:TSX
+Trican Well Service Ltd.,TCW:TSX
+Trilogy Energy Corp.,TET:TSX
+Trinidad Drilling Ltd.,TDG:TSX
+Turquoise Hill Resources Ltd.,TRQ:TSX
+Valeant Pharmaceuticals International Inc.,VRX:TSX
+Veresen Inc.,VSN:TSX
+Vermilion Energy Inc.,VET:TSX
+WSP Global Inc.,WSP:TSX
+Wajax Corporation,WJX:TSX
+West Fraser Timber Co. Ltd.,WFT:TSX
+WestJet Airlines Ltd.,WJA:TSX
+Westport Innovations Inc.,WPT:TSX
+Westshore Terminals Investment Corporation,WTE:TSX
+Whitecap Resources Inc.,WCP:TSX
+Yamana Gold Inc.,YRI:TSX
