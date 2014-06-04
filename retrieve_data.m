@@ -1,5 +1,5 @@
-function [asset_data market_data min_days] = retrieve_data(assets, market,...
-                                        start_date, end_date);
+function [asset_data market_data etf_data min_days] = retrieve_data(assets, market,...
+                                        etf, start_date, end_date);
 %% ACQUIRE DATA FROM YAHOO FINANCE
 % Collect relevant asset data from Yahoo Finance
 Connect = yahoo;
@@ -18,6 +18,12 @@ fetch(Connect, market, 'Close', start_date, end_date);
 min_days = min(min_days, size(market_temp,1));
 market_data(:,1) = market_temp(1:min_days,2);
 market_data = flipud(market_data);
+
+etf_temp = ...
+fetch(Connect, etf, 'Close', start_date, end_date);
+min_days = min(min_days, size(etf_temp,1));
+etf_data(:,1) = etf_temp(1:min_days,2);
+etf_data = flipud(etf_data);
 
 for i = 1:length(assets);
     temp = fetch(Connect, assets{i}, 'Close', start_date, end_date);

@@ -17,6 +17,7 @@ assets = {'DOL.TO', 'FFH.TO', 'HBC.TO', 'BA.TO', 'BB.TO', 'AC-B.TO', ...
 %RONA, pengrove
 
 market_name = '^GSPTSE';
+etf_name = 'XIC.TO';
 
 start_date = '15-April-2013';
 end_date = '12-April-2014';
@@ -24,7 +25,7 @@ end_date = '12-April-2014';
 %retrieve data function takes in array of stock symbols, an index and a timeline and 
 %returns asset data, market data and a vairable called min days (defined above)
 
-[data, market, min_days] = retrieve_data(assets, market_name, start_date,...
+[data, market, etf, min_days] = retrieve_data(assets, market_name, etf_name, start_date,...
     end_date);
 
 desired_return_range = 0.0007;
@@ -37,31 +38,43 @@ diff_days = min_days - end_pred;
 %THe first line takes in the historical data and return the expected return into mu and the covariance matrix into Q
 %The second line does the same but for the market index
 
-h = {'MVO_with_time', 'one_period_MAD', 'one_period_MVO', 'Single Factor'};
+h = { 'One Period MAD', 'One Period MVO', 'Single Factor','Market','ETF'};
 
 for i = 1:size(h,2);
     if strcmp(h{1,i}, 'Single Factor')
-       [SF_x, SF_var, projected_returns, projected_prices]=...
+       [SF_x, SF_var, singlefactor_returns, projected_prices]=...
            one_period_SF(data, market, min_days, end_pred, initial_wealth, desired_return_range);
+        plot(1:length(singlefactor_returns),singlefactor_returns, '-r');
+        hold all
     end
-    if strcmp(h{1,i}, 'one_period_MAD')
-       [MAD_x, MAD_var, projected_returns2, projected_prices]=...
+    if strcmp(h{1,i}, 'One Period MAD')
+       [MAD_x, MAD_var, oneperiod_MAD_returns, projected_prices]=...
            one_period_MAD(data, min_days, end_pred, initial_wealth, desired_return_range);
+        plot(1:length(oneperiod_MAD_returns),oneperiod_MAD_returns, '-b');
+        hold all
     end
-    if strcmp(h{1,i}, 'one_period_MVO')
-       [MAD_x, MAD_var, projected_returns3, projected_prices]=...
+    if strcmp(h{1,i}, 'One Period MVO')
+       [MAD_x, MAD_var, oneperiod_MVO_returns, projected_prices]=...
            one_period_MVO(data, min_days, end_pred, initial_wealth, desired_return_range);
+        plot(1:length(oneperiod_MVO_returns),oneperiod_MVO_returns, '-k');
+        hold all
+    end
+    if strcmp(h{1,i}, 'Market')
+      market_price = market(end_pred:min_days,:);
+      market_returns = market_price(2:diff_days + 1,:)./market_price(1:diff_days,:) - 1;
+      plot(1:length(market_returns),market_returns, '-g');
+      hold all
+    end
+    if strcmp(h{1,i}, 'ETF')
+      etf_price = etf(end_pred:min_days,:);
+      etf_returns = etf_price(2:diff_days + 1, :)./etf_price(1:diff_days,:)-1;
+      plot(1:length(etf_returns),etf_returns, '-m');
     end
 end
 
-plot(1:length(projected_returns),projected_returns, 'r');
-hold all
-plot(1:length(projected_returns),projected_returns2, 'b');
-hold all
-plot(1:length(projected_returns),projected_returns3, 'k');
+h=legend(h);
+%h = legend('Single Factor MVO', 'One period MAD','One period MVO', 'Market Return','ETF return');
 
-market_price = market(end_pred:min_days,:);
-market_returns = market_price(2:diff_days + 1,:)./market_price(1:diff_days,:) - 1;
 
-hold all
-plot(1:length(projected_returns),market_returns, 'g');
+
+
