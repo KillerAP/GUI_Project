@@ -1,5 +1,5 @@
 function [MVO_x, MVO_var, portfolio_returns, portfolio_price] = ...
-    mvo_with_time(data, min_days, end_pred, initial_wealth, R_range,n_assets);
+    multiperiod_MVO(data, min_days, end_pred, initial_wealth, R_range,n_assets);
 
 
 %THe first line takes in the historical data and return the expected return into mu and the covariance matrix into Q

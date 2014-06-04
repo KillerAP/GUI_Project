@@ -38,7 +38,7 @@ diff_days = min_days - end_pred;
 %THe first line takes in the historical data and return the expected return into mu and the covariance matrix into Q
 %The second line does the same but for the market index
 
-h = { 'Single Factor', 'One Period MAD', 'One Period MVO', 'Market','ETF'};
+h = { 'One Period MVO', 'MVO with Time'};
 
 for i = 1:size(h,2);
     if strcmp(h{1,i}, 'Single Factor')
@@ -48,15 +48,15 @@ for i = 1:size(h,2);
         hold all
     end
     if strcmp(h{1,i}, 'One Period MAD')
-       [MAD_x, MAD_var, oneperiod_MAD_returns, oneperiodMAD_prices]=...
+       [MAD_x, MAD_var, oneperiod_MAD_returns, oneperiod_MAD_prices]=...
            one_period_MAD(data, min_days, end_pred, initial_wealth, desired_return_range);
         plot(1:length(oneperiod_MAD_returns),oneperiod_MAD_returns, '-b');
         hold all
     end
     if strcmp(h{1,i}, 'One Period MVO')
-       [MVO_x, MVO_var, oneperiod_MVO_returns, oneperiodMVO_prices]=...
+       [MVO_x, MVO_var, oneperiod_MVO_returns, oneperiod_MVO_prices]=...
            one_period_MVO(data, min_days, end_pred, initial_wealth, desired_return_range,n_assets);
-        plot(1:length(oneperiod_MVO_returns),oneperiod_MVO_returns, '-k');
+        plot(1:length(oneperiod_MVO_returns),oneperiod_MVO_returns, '-b');
         hold all
     end
     if strcmp(h{1,i}, 'Market')
@@ -69,6 +69,12 @@ for i = 1:size(h,2);
       etf_price = etf(end_pred:min_days,:);
       etf_returns = etf_price(2:diff_days + 1, :)./etf_price(1:diff_days,:)-1;
       plot(1:length(etf_returns),etf_returns, '-m');
+    end
+    if strcmp(h{1,i},'MVO with Time')
+        [MVOx_t,MVOvar_t,multiperiod_MVO_returns,multiperiod_MVO_prices]=...
+           multiperiod_MVO(data,min_days,end_pred,initial_wealth,desired_return_range,n_assets);
+        plot(1:length(multiperiod_MVO_returns),multiperiod_MVO_returns,'-g');
+        hold all          
     end
 end
 grid on;
