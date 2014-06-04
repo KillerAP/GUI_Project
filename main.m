@@ -10,7 +10,7 @@ clc
 
 % Create cell array of asset names
 assets = {'DOL.TO', 'FFH.TO', 'HBC.TO', 'BA.TO', 'BB.TO', 'AC-B.TO', ...
-    'RON.TO', 'PGF.TO', 'MFC.TO', 'IMO.TO','CNE.TO'};
+    'RON.TO', 'PGF.TO', 'MFC.TO', 'IMO.TO','ARX.TO'};
   n_assets=length(assets);
 
 %Dollarama, , Hudson Bay company, Bell, blackberry, aircanada
