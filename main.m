@@ -10,7 +10,8 @@ clc
 
 % Create cell array of asset names
 assets = {'DOL.TO', 'FFH.TO', 'HBC.TO', 'BA.TO', 'BB.TO', 'AC-B.TO', ...
-    'RON.TO', 'PGF.TO', 'MFC.TO', 'IMO.TO'};
+    'RON.TO', 'PGF.TO', 'MFC.TO', 'IMO.TO','CNE.TO'};
+  n_assets=length(assets);
 
 %Dollarama, , Hudson Bay company, Bell, blackberry, aircanada
 %RONA, pengrove
@@ -41,20 +42,20 @@ h = { 'Single Factor', 'One Period MAD', 'One Period MVO', 'Market','ETF'};
 
 for i = 1:size(h,2);
     if strcmp(h{1,i}, 'Single Factor')
-       [SF_x, SF_var, singlefactor_returns, projected_prices]=...
+       [SF_x, SF_var, singlefactor_returns, SF_prices]=...
            one_period_SF(data, market, min_days, end_pred, initial_wealth, desired_return_range);
         plot(1:length(singlefactor_returns),singlefactor_returns, '-r');
         hold all
     end
     if strcmp(h{1,i}, 'One Period MAD')
-       [MAD_x, MAD_var, oneperiod_MAD_returns, projected_prices]=...
+       [MAD_x, MAD_var, oneperiod_MAD_returns, oneperiodMAD_prices]=...
            one_period_MAD(data, min_days, end_pred, initial_wealth, desired_return_range);
         plot(1:length(oneperiod_MAD_returns),oneperiod_MAD_returns, '-b');
         hold all
     end
     if strcmp(h{1,i}, 'One Period MVO')
-       [MVO_x, MVO_var, oneperiod_MVO_returns, projected_prices]=...
-           one_period_MVO(data, min_days, end_pred, initial_wealth, desired_return_range);
+       [MVO_x, MVO_var, oneperiod_MVO_returns, oneperiodMVO_prices]=...
+           one_period_MVO(data, min_days, end_pred, initial_wealth, desired_return_range,n_assets);
         plot(1:length(oneperiod_MVO_returns),oneperiod_MVO_returns, '-k');
         hold all
     end
@@ -70,7 +71,7 @@ for i = 1:size(h,2);
       plot(1:length(etf_returns),etf_returns, '-m');
     end
 end
-
+grid on;
 h=legend(h);
 %h = legend('Single Factor MVO', 'One period MAD','One period MVO', 'Market Return','ETF return');
 

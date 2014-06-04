@@ -1,5 +1,5 @@
 function [MVO_x, MVO_var, portfolio_returns, portfolio_price] = ...
-    mvo_with_time(data, min_days, end_pred, initial_wealth, R_range);
+    mvo_with_time(data, min_days, end_pred, initial_wealth, R_range,n_assets);
 
 
 %THe first line takes in the historical data and return the expected return into mu and the covariance matrix into Q
@@ -19,7 +19,7 @@ pred_days = 1:diff_days;
 for i = 1:diff_days;
     new_end_pred = end_pred + i - 1;
     [mu, Q] = param_data(data, new_end_pred);
-    [MVO_x(i,:), MVO_var(i)] = sMVO(10, R_range, mu, Q);
+    [MVO_x(i,:), MVO_var(i)] = sMVO(n_assets, R_range, mu, Q);
     
 end
 

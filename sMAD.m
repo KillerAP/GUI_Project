@@ -25,7 +25,7 @@ for a = 1:length(R);
 end
 
 MAD_x = MAD_x';
-MAD_x = MAD_x(:,1:10);
+MAD_x = MAD_x(:,1:n_assets);
 
 fval = fval / T;
 MAD_var = (pi/2)^(1/2) * fval;

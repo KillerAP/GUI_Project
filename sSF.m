@@ -1,4 +1,4 @@
-function [ SF_x, SF_var] = sSF( r_it, r_M, return_range, mu, mu_M)
+    function [ SF_x, SF_var] = sSF( r_it, r_M, return_range, mu, mu_M)
 %% SINGLE FACTOR MEAN VARIANCE OPTIMIZATION VIA QUADPROG
 % Input the historical return data for assets, return data for the market, range of desired returns
 % the mean vector for the assets and the mean return of the market. The function will return

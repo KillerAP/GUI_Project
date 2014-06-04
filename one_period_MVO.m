@@ -1,9 +1,9 @@
 function [MVO_x, MVO_var, portfolio_returns, portfolio_price] = ...
-    one_period_MVO(data, min_days, end_pred, initial_wealth, R_range);
+    one_period_MVO(data, min_days, end_pred, initial_wealth, R_range,n_assets);
 
 [mu, Q, r_it] = param_data(data, end_pred);
 
-[MVO_x, MVO_var] = sMVO(10, R_range , mu, Q);
+[MVO_x, MVO_var] = sMVO(n_assets, R_range , mu, Q);
 
 % time horizon over which we are 'predicting'
 diff_days = min_days - end_pred; 
