@@ -21,7 +21,7 @@ portfolio_price(1) = initial_wealth;
 
 %initial_wealth = W; Given by user
 
-for i = 1:length(portfolio_returns);
+for i = 1:1:size(portfolio_returns,2);
     portfolio_price(i+1) = portfolio_price(i) * (1 + portfolio_returns(i));
 end
 end

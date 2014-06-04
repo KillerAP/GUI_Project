@@ -27,7 +27,7 @@ projection = data(end_pred:min_days, :)';
 projected_returns = projection(:, 2:end)./projection(:, 1:end-1) - 1;
 portfolio_price(1) = initial_wealth;
 
-for i = 1:length(projected_returns);
+for i = 1:size(projected_returns,2);
     portfolio_returns(i) = MVO_x(i,:) * projected_returns(:,i); 
     portfolio_price(i+1) = portfolio_price(i) * (1 + portfolio_returns(i));
 end

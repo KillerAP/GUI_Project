@@ -8,9 +8,10 @@ min_days = intmax;
 
 for i = 1:length(assets)
     temp = fetch(Connect, assets{i}, 'Close', start_date, end_date); 
+    disp(i);
     min_days = min(size(temp,1), min_days);    
 end
-    
+ 
 
 % S&P/TX market data
 market_temp =...

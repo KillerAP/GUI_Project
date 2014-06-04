@@ -23,7 +23,7 @@ portfolio_returns = MAD_x * projected_returns;
 
 portfolio_price(1) = initial_wealth;
 
-for i = 1:length(portfolio_returns);
+for i = 1:size(portfolio_returns,2);
     portfolio_price(i+1) = portfolio_price(i) * (1 + portfolio_returns(i));
 end
 

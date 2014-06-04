@@ -1,5 +1,5 @@
-clear all
-clc 
+ clear all
+ clc 
 
 % assume you use 25 days of histroical data to optimize portfolio and then 
 % compare actual returns for the next 10 days with that optimized portfolio
@@ -7,11 +7,15 @@ clc
 %diff_days = min days - end_pred = 10 is the amount of time where we analyze the returns of the optimized portfolio
 
 %% Temporary Asset information until user input is implemented
-
+%{
 % Create cell array of asset names
 assets = {'DOL.TO', 'FFH.TO', 'HBC.TO', 'BA.TO', 'BB.TO', 'AC-B.TO', ...
     'RON.TO', 'PGF.TO', 'MFC.TO', 'IMO.TO','ARX.TO'};
-  n_assets=length(assets);
+%}
+tic
+load('assets.mat');
+
+n_assets=length(assets);
 
 %Dollarama, , Hudson Bay company, Bell, blackberry, aircanada
 %RONA, pengrove
@@ -19,7 +23,7 @@ assets = {'DOL.TO', 'FFH.TO', 'HBC.TO', 'BA.TO', 'BB.TO', 'AC-B.TO', ...
 market_name = '^GSPTSE'; %S&P/TSX Capped Composite
 etf_name = 'XIC.TO'; %tracks the S&P/TSX Capped Composite Index
 
-start_date = '15-April-2013';
+start_date = '12-February-2013';
 end_date = '12-April-2014';
 
 %retrieve data function takes in array of stock symbols, an index and a timeline and 
@@ -38,7 +42,7 @@ diff_days = min_days - end_pred;
 %THe first line takes in the historical data and return the expected return into mu and the covariance matrix into Q
 %The second line does the same but for the market index
 
-h = { 'One Period MVO', 'MVO with Time'};
+h = {'One Period MVO', 'Market', 'ETF'};
 
 for i = 1:size(h,2);
     if strcmp(h{1,i}, 'Single Factor')
@@ -56,7 +60,7 @@ for i = 1:size(h,2);
     if strcmp(h{1,i}, 'One Period MVO')
        [MVO_x, MVO_var, oneperiod_MVO_returns, oneperiod_MVO_prices]=...
            one_period_MVO(data, min_days, end_pred, initial_wealth, desired_return_range,n_assets);
-        plot(1:length(oneperiod_MVO_returns),oneperiod_MVO_returns, '-b');
+        plot(1:length(oneperiod_MVO_returns),oneperiod_MVO_returns, '-k');
         hold all
     end
     if strcmp(h{1,i}, 'Market')
@@ -73,12 +77,13 @@ for i = 1:size(h,2);
     if strcmp(h{1,i},'MVO with Time')
         [MVOx_t,MVOvar_t,multiperiod_MVO_returns,multiperiod_MVO_prices]=...
            multiperiod_MVO(data,min_days,end_pred,initial_wealth,desired_return_range,n_assets);
-        plot(1:length(multiperiod_MVO_returns),multiperiod_MVO_returns,'-g');
+        plot(1:length(multiperiod_MVO_returns),multiperiod_MVO_returns,'-o');
         hold all          
     end
 end
 grid on;
 h=legend(h);
+toc
 %h = legend('Single Factor MVO', 'One period MAD','One period MVO', 'Market Return','ETF return');
 
 
