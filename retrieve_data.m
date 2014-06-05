@@ -7,9 +7,9 @@ Connect = yahoo;
 min_days = intmax;
 
 for i = 1:length(assets)
-    temp = fetch(Connect, assets{i}, 'Close', start_date, end_date); 
+    temp{i} = fetch(Connect, assets{i}, 'Close', start_date, end_date); 
     disp(i);
-    min_days = min(size(temp,1), min_days);    
+    min_days = min(size(temp{i},1), min_days);    
 end
  
 
@@ -27,11 +27,8 @@ etf_data(:,1) = etf_temp(1:min_days,2);
 etf_data = flipud(etf_data);
 
 for i = 1:length(assets);
-    temp = fetch(Connect, assets{i}, 'Close', start_date, end_date);
-    asset_data(:,i) = temp(1:min_days,2);
-
-    date_data(:,i) = cellstr(datestr(temp(1:min_days,1))); 
-
+    asset_data(:,i) = temp{i}(1:min_days,2);
+    date_data(:,i) = cellstr(datestr(temp{i}(1:min_days,1))); 
 end
     asset_data = flipud(asset_data);
     date_data = flipud(date_data);
