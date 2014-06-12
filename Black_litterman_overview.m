@@ -19,8 +19,9 @@ this
 
 USER'S VIEWS
 
-View Matrix = Q_v
-Uncertainty of Views = VU
+View Vector = Q_v
+Uncertainty of Views (Covariance matrix) = VU
+Asset linking matrix for the views = P
 
 Results in N(Q_v, VU)
 
