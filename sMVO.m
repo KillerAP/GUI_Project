@@ -18,7 +18,7 @@ ub = [];
 R = return_range;
 
 % Set quadprog options
-options = optimset('Algorithm', 'active-set', 'TolFun', 1/10^8, 'MaxFunEvals', 100, 'MaxIter', 1000);
+options = optimset('Algorithm', 'active-set', 'TolFun', 1/10^8, 'MaxFunEvals', 100, 'MaxIter', 300);
 
 %Solve MVO and store SD values for plotting
 

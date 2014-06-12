@@ -23,7 +23,7 @@ n_assets=length(assets);
 market_name = '^GSPTSE'; %S&P/TSX Capped Composite
 etf_name = 'XIC.TO'; %tracks the S&P/TSX Capped Composite Index
 
-start_date = '12-February-2013';
+start_date = '12-June-2013';
 end_date = '12-April-2014';
 
 %retrieve data function takes in array of stock symbols, an index and a timeline and 
