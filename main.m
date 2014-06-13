@@ -29,7 +29,7 @@ end_date = '12-April-2014';
 %retrieve data function takes in array of stock symbols, an index and a timeline and 
 %returns asset data, market data and a vairable called min days (defined above)
 
-[data, market, etf, min_days] = retrieve_data(assets, market_name, etf_name, start_date,...
+[data, market,market_caps, etf, min_days] = retrieve_data(assets, market_name, etf_name, start_date,...
     end_date);
 
 desired_return_range = 0.0007;
@@ -39,11 +39,17 @@ end_pred = round(min_days * 0.75); % use the first 75% of days for parameter est
 
 diff_days = min_days - end_pred;
 
+%BLACK-LITTERMAN SPECIFIC CODE
+
+[cap_weights,unavailable_market_caps]=capweights(market_caps);
+
+
 %THe first line takes in the historical data and return the expected return into mu and the covariance matrix into Q
 %The second line does the same but for the market index
 
-h = {'One Period MVO', 'Market', 'ETF'};
-
+h={};
+%h = {'One Period MVO', 'Market', 'ETF','Black-Litterman'};
+%{
 for i = 1:size(h,2);
     if strcmp(h{1,i}, 'Single Factor')
        [SF_x, SF_var, singlefactor_returns, SF_prices]=...
@@ -80,12 +86,21 @@ for i = 1:size(h,2);
         plot(1:length(multiperiod_MVO_returns),multiperiod_MVO_returns,'-o');
         hold all          
     end
+    if strcmp(h{1,i},'Black-Litterman')
+        [BLx,BLvar,BL_returns,BL_returns,BL_prices]=...
+          BL(data,min_days,end_pred,initial_wealth,R_range,n_assets,...
+             desired_return_range,n_assets,marketcaps,tau,P_viewasset,...
+             Q_viewreturns,sigma_viewvar);
+          plot(1:length(BL_returns),BL_returns,'-o');
+          hold all
+    end
+
 end
 grid on;
 h=legend(h);
 toc
 %h = legend('Single Factor MVO', 'One period MAD','One period MVO', 'Market Return','ETF return');
-
+%}
 
 
 

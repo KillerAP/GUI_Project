@@ -1,4 +1,4 @@
-function [asset_data market_data etf_data min_days] = retrieve_data(assets, market,...
+function [asset_data market_data market_caps etf_data min_days] = retrieve_data(assets, market,...
                                         etf, start_date, end_date);
 %% ACQUIRE DATA FROM YAHOO FINANCE
 % Collect relevant asset data from Yahoo Finance
@@ -6,12 +6,23 @@ Connect = yahoo;
 
 min_days = intmax;
 
-for i = 1:length(assets)
-    temp{i} = fetch(Connect, assets{i}, 'Close', start_date, end_date); 
+
+for i = 1:4
+  	temp{i} = fetch(Connect, assets{i}, 'Close',start_date,end_date);
+
+    %[temp{i},market_caps{i}] = fetch(Connect, assets{i}, 'Close', ...
+    %							'MarketCapitalization' start_date, end_date); 
+
+	data{i}=getStockInformation({assets{i}});
+	%disp(data{i});
+	market_cap_string{i}=data{i}.MarketCapitalization;
+	market_caps{i}=marketcap_string_to_num(market_cap_string{i});
     disp(i);
     min_days = min(size(temp{i},1), min_days);    
 end
  
+%market_caps_temp={getStockINfomr}
+%collecting market caps
 
 % S&P/TX market data
 market_temp =...
@@ -26,7 +37,7 @@ min_days = min(min_days, size(etf_temp,1));
 etf_data(:,1) = etf_temp(1:min_days,2);
 etf_data = flipud(etf_data);
 
-for i = 1:length(assets);
+for i = 1:4
     asset_data(:,i) = temp{i}(1:min_days,2);
     date_data(:,i) = cellstr(datestr(temp{i}(1:min_days,1))); 
 end

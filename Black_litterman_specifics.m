@@ -50,6 +50,9 @@ Scaling factor = t
 % aversion coefficient, and asset implied covariance matrix.
 % These values are the only ones that are not arbitrary which haven't
 % specified. 
+
+%calculating risk averision coefficient
+%RAC = [E(r)-rf]/(market_var);
 mu_eq = RAC * ICV * x_mkt;
 
 
@@ -66,5 +69,5 @@ mu_bl = inv(inv(t*ICV) + P'*inv(VU)*P)*(inv(t*ICV)*mu_eq + P'*inv(VU)*ICV);
 % Calculating new weights according to the paper I'm using, though this can
 % be ignored and we could just do Black Litterman like Kwon said.
 
-x_bl = inv(RAC*ICV) * mu_bl;
+x_bl = inv(RAC*ICV) * mu_bl; 
 
