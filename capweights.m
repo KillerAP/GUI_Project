@@ -1,4 +1,4 @@
-function [cap_weights,sum_marketcaps]=capweights(market_cap)
+function [cap_weights,available_marketcaps]=capweights(market_cap)
 
 	unavailable_marketcaps=0;
 	
@@ -18,7 +18,7 @@ function [cap_weights,sum_marketcaps]=capweights(market_cap)
 		end
 	end
 
-	available_market_caps=length(market_cap)-unavailable_marketcaps;
+	available_marketcaps=length(market_cap)-unavailable_marketcaps;
 	
 
 

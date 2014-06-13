@@ -41,15 +41,14 @@ diff_days = min_days - end_pred;
 
 %BLACK-LITTERMAN SPECIFIC CODE
 
-[cap_weights,unavailable_market_caps]=capweights(market_caps);
+[cap_weights,available_market_caps]=capweights(market_caps);
 
 
 %THe first line takes in the historical data and return the expected return into mu and the covariance matrix into Q
 %The second line does the same but for the market index
 
-h={};
-%h = {'One Period MVO', 'Market', 'ETF','Black-Litterman'};
-%{
+h = {'Black-Litterman'};
+
 for i = 1:size(h,2);
     if strcmp(h{1,i}, 'Single Factor')
        [SF_x, SF_var, singlefactor_returns, SF_prices]=...

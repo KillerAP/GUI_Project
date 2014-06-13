@@ -6,17 +6,19 @@ Connect = yahoo;
 
 min_days = intmax;
 
-
-for i = 1:4
+count=0;
+for i = 1:length(assets)
+  	
+	data{i}=getStockInformation({assets{i}});
+	%disp(data{i});
+	market_cap_string{i}=data{i}.MarketCapitalization;
+	market_caps{i}=marketcap_string_to_num(market_cap_string{i});
+  	
   	temp{i} = fetch(Connect, assets{i}, 'Close',start_date,end_date);
 
     %[temp{i},market_caps{i}] = fetch(Connect, assets{i}, 'Close', ...
     %							'MarketCapitalization' start_date, end_date); 
 
-	data{i}=getStockInformation({assets{i}});
-	%disp(data{i});
-	market_cap_string{i}=data{i}.MarketCapitalization;
-	market_caps{i}=marketcap_string_to_num(market_cap_string{i});
     disp(i);
     min_days = min(size(temp{i},1), min_days);    
 end
@@ -37,7 +39,7 @@ min_days = min(min_days, size(etf_temp,1));
 etf_data(:,1) = etf_temp(1:min_days,2);
 etf_data = flipud(etf_data);
 
-for i = 1:4
+for i = 1:length(assets)
     asset_data(:,i) = temp{i}(1:min_days,2);
     date_data(:,i) = cellstr(datestr(temp{i}(1:min_days,1))); 
 end
