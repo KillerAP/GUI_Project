@@ -1,6 +1,8 @@
 function [cap_weights,available_marketcaps]=capweights(market_cap)
 
-	unavailable_marketcaps=0;
+	%this represesnts number of assets that don't have market capatilization
+	%data available on Yahoo finance
+	unavailable_marketcaps=0; 
 	
 	sum_marketcaps=0;
 	for i=1:length(market_cap)

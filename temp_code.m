@@ -81,3 +81,21 @@ for i = 1:size(h,2);
     end
 
 end
+
+%-----------------------------------------------------------------
+%code used in retrieve_data.m for market caps
+
+%[temp{i},market_caps{i}] = fetch(Connect, assets{i}, 'Close', ...
+%							      'MarketCapitalization' start_date, end_date); 
+
+%-----------------------------------------------------------------
+%shortend expression by including flipud in the assignment and removing 
+% these two lines
+market_data = flipud(market_data);
+etf_data = flipud(etf_data);
+
+%-----------------------------------------------------------------
+%parameters to be used for Black-Litterman
+min_days,end_pred,initial_wealth,desired_return_range,n_assets)
+R_range,n_assets,marketcaps,tau,
+P_viewassets,Q_viewreturns,sigma_viewvar);
