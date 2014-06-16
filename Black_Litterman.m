@@ -5,11 +5,7 @@ function [BL_x,BL_var,BL_portfolio_returns,BL_portfolio_price]=...
 
 	%represents number of assets with available market_caps
 	n_assets=size(data,2); 
-	mu=BL_Er';
-	Q=BL_sigma;
-	disp(Q);
-	
-	[BL_x, BL_var] = sMVO(n_assets, R_range , mu, Q);
+	[BL_x, BL_var] = sMVO(n_assets, R_range , BL_ER', BL_sigma);
 
 	% time horizon over which we are 'predicting'
 	diff_days = min_days - end_pred; 

@@ -63,20 +63,20 @@ BL_tau=0.0375;
 %and asset 3 will outpeform asset 7 by 10%
 BL_P = [1 0 0 0 0 0 0;
         0 0 0 1 -1 0 0;
-        0 1 1 -1 0 0 -1;]
+        0 0 1 0 0 0 -1;]
 
 %Set the value of BL_Q(kx1), which represents expected retruns of portfolios %corresponding $to the matrix views stored in BL_P, to an arbitrary value
-BL_Q = [5; 2; 10];
+BL_Q = [15; 50; 20];
 
 %Set the value of BL_omega(kxk), which represents uncertainy of view matrix, to an arbitrary %value
-BL_omega = [0.01 0      0;
-            0    0.0025 0;
-            0    0      0.003]
+BL_omega = [0 0      0;
+            0    0 0;
+            0    0      0]
 
 
 
 
-h = {'One Period MVO', 'Market','Black-Litterman'};
+h = {'One Period MVO','ETF','Market','Black-Litterman'};
 
 n_assets=size(data,2);
 for i = 1:size(h,2);

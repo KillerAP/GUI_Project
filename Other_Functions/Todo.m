@@ -9,10 +9,21 @@
 (CHECK)-Do inverse optimization
 (CHECk)-follow through with expected reutrn equation
 (CHECK)-generate arbitrary view matrices (P , Q & omega(uncertainty))
+(CHECK)parametrize Black-Litterman and use a function
 
--parametrize Black-Litterman and use a function
-(initially do MVO with the solved for E[R])
-**figure out this weights thing
+(CHECK)(initially do MVO with the solved for E[R])
+-Solve for Black-Litterman weights using rigourous mathematical method
+ instead of linear optimization
+-Apply one investment technique to autonomously generate matrices P,Q and omega
+
+-store all yahoo finance data in sql database for preprocessing
+-Make Modules/libraries for functions and reorganize them
+-Create new Rails repository and try the following two things
+1. Store MATLAB asset data in CSV file and save in Heroku
+2. CAll Matlab functions in Ruby
+
+-Create Ruby script that imports yahoo finance data(should be faster)
+
 
 
 
