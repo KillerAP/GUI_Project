@@ -63,18 +63,10 @@ BL_tau=0.0375;
 %and asset 3 will outpeform asset 7 by 10%
 BL_P = [1 0 0 0 0 0 0;
         0 0 0 1 -1 0 0;
-        0 1 1 -1 0 0 -1;]
+        0 1 1 -1 0 0 -1;];
 
 %Set the value of BL_Q(kx1), which represents expected retruns of portfolios %corresponding $to the matrix views stored in BL_P, to an arbitrary value
 BL_Q = [5; 2; 10];
-
-%Set the value of BL_omega(kxk), which represents uncertainy of view matrix, to an arbitrary %value
-BL_omega = [0.01 0      0;
-            0    0.0025 0;
-            0    0      0.003]
-
-
-
 
 h = {'One Period MVO', 'Market','Black-Litterman'};
 
@@ -118,16 +110,16 @@ for i = 1:size(h,2);
 
     if strcmp(h{1,i},'Black-Litterman')
         %Call function to return the Black-Litterman expected returns
-          [BL_Er, BL_sigma,BL_pi]=...
-           BL_expected_returns(data,market,market_caps,BL_tau,BL_P,...
-           BL_Q,BL_omega,end_pred);
+          [BL_Er, BL_sigma,BL_pi,rac]=...
+           BL_expected_returns(data, market, market_caps,...
+									   BL_tau, BL_P, BL_Q, end_pred);
 
           %The lines below uses the expected returns computed by black-litterman and implement
           %Mean-variance optimization equation by using BL_Er for expected returns
 
           [BL_x,BL_var,BL_portfolio_returns,BL_portfolio_prices]=...
           Black_Litterman(data,min_days,end_pred,initial_wealth,...
-          desired_return_range,BL_Er,BL_sigma);
+          desired_return_range,BL_Er,BL_sigma,rac);
           plot(1:length(BL_portfolio_returns),BL_portfolio_returns,'-m');
           hold all
     end

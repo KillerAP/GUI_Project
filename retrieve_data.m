@@ -18,8 +18,6 @@ for i = 1:8
 	market_caps{i}=marketcap_string_to_num(market_cap_string{i});
   	temp{i} = fetch(Connect, assets{i}, 'Close',start_date,end_date);
 
-    
-
     disp(i);
     min_days = min(size(temp{i},1), min_days);    
 end
