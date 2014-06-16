@@ -1,22 +1,22 @@
-function [BL_Er, BL_sigma, BL_pi, rac] = BL_expected_returns(data, market, market_caps,...
-									   BL_tau, BL_P, BL_Q, end_pred)
+function [BL_Er, BL_sigma, BL_pi, BL_omega,rac] = ...
+	BL_expected_returns(data, market, market_caps,...
+						BL_tau, BL_P, BL_Q, end_pred)
 
 	%obtain the covariance of expected retursn of the data (BL_sigma)
 	r_it = (data(2:end_pred,:)./data(1:end_pred-1,:)) - 1;
 	BL_sigma=cov(r_it);
 
-    %{
+    
     for i = 1:size(BL_P,1)
         BL_omega(i) = BL_P(i,:)*BL_sigma*BL_P(i,:)';
     end
 
     BL_omega = diag(BL_tau*BL_omega);
-    %}
+    
     
 %Set the value of BL_omega(kxk), which represents uncertainy of view matrix, to an arbitrary %value
-BL_omega = [0.01 0      0;
-            0    0.0025 0;
-            0    0      0.003]
+
+
     
 	%Calculating Risk aversion coefficient - value is 0.0286
 	risk_aversion_coefficient=...
