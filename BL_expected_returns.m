@@ -1,11 +1,11 @@
-function [BL_Er, BL_sigma] = BL_expected_returns(data, market, market_caps,...
+function [BL_Er, BL_sigma,BL_pi] = BL_expected_returns(data, market, market_caps,...
 									   BL_tau, BL_P, BL_Q, BL_omega,end_pred)
 
 	%obtain the covariance of expected retursn of the data (BL_sigma)
 	r_it = (data(2:end_pred,:)./data(1:end_pred-1,:)) - 1;
 	BL_sigma=cov(r_it);
 
-	%Calculating Risk aversion coefficient
+	%Calculating Risk aversion coefficient - value is 0.0286
 	risk_aversion_coefficient=...
 	comp_risk_aversion_coefficient(mean(market),0,cov(market));	
 
@@ -13,13 +13,22 @@ function [BL_Er, BL_sigma] = BL_expected_returns(data, market, market_caps,...
 	[cap_weights,available_market_caps]=capweights(market_caps);
 
 	%Calculate the implied excess equilibrium return vector (BL_Pi)
-	BL_pi=risk_aversion_coefficient.*BL_sigma*cap_weights';
+	%This is the Inverse optimization step
+	BL_pi=risk_aversion_coefficient*BL_sigma*cap_weights';
 
 	%Use the below equation to computer E[R], which
 	%represents the new combined return vector
 	BL_Er=(inv(BL_tau*BL_sigma)+BL_P'*inv(BL_omega)*BL_P) * ...
-	      (inv(BL_tau.*BL_sigma)*BL_pi+BL_P'*BL_omega*BL_Q);
+	      (inv(BL_tau*BL_sigma)*BL_pi+BL_P'*inv(BL_omega)*BL_Q);
 
 
 end
 
+
+%{
+BL_x =
+
+    0.1934    0.2849    0.1763    0.0121    0.1529    0.0160    0.1645
+
+    %}
+	
