@@ -32,7 +32,7 @@ function [BL_Er, BL_sigma, BL_pi, BL_omega,rac] = ...
 	      (inv(BL_tau*BL_sigma)*BL_pi+BL_P'*inv(BL_omega)*BL_Q);
     BL_Er = BL_Er';
 
-
+    BL_sigma = inv(inv(BL_tau * BL_sigma) + BL_P'*inv(BL_omega)*BL_P);
 end
 
 
