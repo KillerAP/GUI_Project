@@ -13,11 +13,6 @@ function [BL_Er, BL_sigma, BL_pi, BL_omega,rac] = ...
 
     BL_omega = diag(BL_tau*BL_omega);
     
-    
-%Set the value of BL_omega(kxk), which represents uncertainy of view matrix, to an arbitrary %value
-
-
-    
 	%Calculating Risk aversion coefficient - value is 0.0286
 	risk_aversion_coefficient=...
 	comp_risk_aversion_coefficient(mean(market),0,cov(market));	
