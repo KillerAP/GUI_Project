@@ -24,7 +24,6 @@ A=[];
 b=[]
 %Solve MVO and store SD values for plotting
 
-%Modify this so that it works for variable length R (length>1)
 for i = 1:length(R);
     Aeq = [Aeq; -mu];
     beq = [beq; -R(i)]''

@@ -24,4 +24,20 @@
 
 -Create Ruby script that imports yahoo finance data(should be faster)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

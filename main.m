@@ -11,20 +11,14 @@
 % Create cell array of asset names
 assets = {'DOL.TO', 'FFH.TO', 'HBC.TO', 'BA.TO', 'BB.TO', 'AC-B.TO', ...
     'RON.TO', 'PGF.TO', 'MFC.TO', 'IMO.TO','ARX.TO'};
-
-%Dollarama, , Hudson Bay company, Bell, blackberry, aircanada
-%RONA, pengrove
 %}
-
-%% SECTION I - Retrieving data and assigning parameters
 tic
 load('assets.mat');
 
-%Add the relevant paths
-
-addpath(genpath('MVO_functions\Work'));
 %n_assets=length(assets);
 
+%Dollarama, , Hudson Bay company, Bell, blackberry, aircanada
+%RONA, pengrove
 
 market_name = '^GSPTSE'; %S&P/TSX Capped Composite
 etf_name = 'XIC.TO'; %tracks the S&P/TSX Capped Composite Index
@@ -76,7 +70,12 @@ BL_P = [1 0 0 0 0 0 0;
 %Set the value of BL_Q(kx1), which represents expected retruns of portfolios %corresponding $to the matrix views stored in BL_P, to an arbitrary value
 BL_Q = [0.05; 0.02; 0.01; 0.02];
 
-%% SECTION II - Executing Functions for specific models
+%Set the value of BL_omega(kxk), which represents uncertainy of view matrix, to an arbitrary %value
+BL_omega = [0.025 0      0;
+            0     0.01   0;
+            0     0      0.03];
+
+
 h = {'One Period MVO','Market','Black-Litterman'};
 
 n_assets=size(data,2);
