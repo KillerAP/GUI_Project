@@ -21,13 +21,13 @@ R = return_range;
 options = optimset('Algorithm', 'active-set', 'TolFun', 1/10^8, 'MaxFunEvals', 100, 'MaxIter', 300);
 
 A=[];
-b=[]
+b=[];
 %Solve MVO and store SD values for plotting
 
 %Modify this so that it works for variable length R (length>1)
 for i = 1:length(R);
-    Aeq = [Aeq; -mu];
-    beq = [beq; -R(i)]''
+    Aeq = [Aeq; mu];
+    beq = [beq; R(i)];
     
     [MVO_x(i,:), MVO_var(i,1)] = quadprog(Q, c, A, b,Aeq, beq, lb, ub, [], options);
 end
