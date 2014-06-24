@@ -67,10 +67,10 @@ BL_tau=0.0375;
 %example: stating that asset 1 will outperform all others by 5%,
 %asset 4 will outpeform asset 5 by 2%
 %and asset 3 will outpeform asset 7 by 10%
-BL_P = [1 0 0 0 0 0 0;
-        0 0 0 1 -1 0 0;
-        0 0 1 0 0 0 -1;
-        0 1 0 0 0 0 0 ];
+BL_P = [1 0 0 0 0 0 0 0;
+        0 0 0 1 -1 0 0 0;
+        0 0 1 0 0 0 -1 0;
+        0 1 0 0 0 0 0 0];
 
 
 %Set the value of BL_Q(kx1), which represents expected retruns of portfolios %corresponding $to the matrix views stored in BL_P, to an arbitrary value
