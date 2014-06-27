@@ -1,4 +1,4 @@
-GUI_Project
+Black-Litterman GUI Project
 ===========
 
 This Project intends to Implement the Black-Litterman Model on various Stock Indices. It will eventually, incorporate propietary algorithms for generating views as well as their associated uncertainty's. It will test the algorithms over time for how they compare in comparison with the Market Portfolio. It also implements Standard Markowitz MVO and Single-factor MVO for further analysis.
