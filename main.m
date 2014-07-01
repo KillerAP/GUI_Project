@@ -57,6 +57,7 @@ end_pred = round(min_days * 0.75); % use the first 75% of days for parameter est
 
 diff_days = min_days - end_pred;
 
+n_assets=size(data,2);
 %---------------------------------------------------------------------------------------
 %BLACK-LITTERMAN SPECIFIC CODE
 
@@ -64,6 +65,7 @@ diff_days = min_days - end_pred;
 %to equal and arbitrary value(normally chosen between 0.025 and 0.05)
 BL_tau=0.0375;
 
+%{
 %example: stating that asset 1 will outperform all others by 5%,
 %asset 4 will outpeform asset 5 by 2%
 %and asset 3 will outpeform asset 7 by 10%
@@ -71,15 +73,24 @@ BL_P = [1 0 0 0 0 0 0 0;
         0 0 0 1 -1 0 0 0;
         0 0 1 0 0 0 -1 0;
         0 1 0 0 0 0 0 0];
+%}
+
+%Dynamically generating BL_P so that the dimensions match up with number of assets retrieved
+%(next add random generation of 1 & -1)
+BL_P=[1 0 0; 1 -1 0; 1 0 -1]
+while (size(BL_P,2)<n_assets)
+  BL_P=[BL_P zeros(3,1)];
+end
 
 
-%Set the value of BL_Q(kx1), which represents expected retruns of portfolios %corresponding $to the matrix views stored in BL_P, to an arbitrary value
-BL_Q = [0.05; 0.02; 0.01; 0.02];
+%Set the value of BL_Q(kx1), which represents expected returns of portfolios %corresponding $to the matrix views stored in BL_P, to an arbitrary value
+BL_Q = [0.05; 0.02; 0.01;];
 
 %% SECTION II - Executing Functions for specific models
 h = {'One Period MVO','Market','Black-Litterman'};
 
-n_assets=size(data,2);
+figure('name','Plot of Daily Portfolio Returns over Time optimized for MVO')
+hold on
 for i = 1:size(h,2);
     if strcmp(h{1,i}, 'Single Factor')
        [SF_x, SF_var, singlefactor_returns, SF_prices]=...
@@ -130,6 +141,9 @@ for i = 1:size(h,2);
           Black_Litterman(data,min_days,end_pred,initial_wealth,...
           desired_return_range,BL_Er,BL_sigma,rac);
           plot(1:length(BL_portfolio_returns),BL_portfolio_returns,'-k');
+          title('Comparing Returns of Optimal Portfolios created with MVO & Black-Litterman')
+          xlabel('Time (in Days)')
+          ylabel('Daily Return of Portfolio')
           hold all
     end
 
