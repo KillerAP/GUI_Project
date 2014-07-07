@@ -82,7 +82,7 @@ while (size(BL_P,2)<n_assets)
   BL_P=[BL_P zeros(3,1)];
 end
 
-
+ 
 %Set the value of BL_Q(kx1), which represents expected returns of portfolios %corresponding $to the matrix views stored in BL_P, to an arbitrary value
 BL_Q = [0.05; 0.02; 0.01;];
 
@@ -150,6 +150,8 @@ for i = 1:size(h,2);
 end
 grid on;
 h=legend(h);
+4
+%This section creates tables of important variables
 toc
 %h = legend('Single Factor MVO', 'One period MAD','One period MVO', 'Market Return','ETF return');
 %}

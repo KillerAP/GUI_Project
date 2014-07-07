@@ -24,4 +24,13 @@
 
 -Create Ruby script that imports yahoo finance data(should be faster)
 
+-Output table figure that outputs key figures associated with each figure
+namely: 
+  ->BL_P(Identifying which assets are associated with which views)
+  ->BL_Q(identifying the excess returns above market-cap weighted for each view)
+  ->MVO_X(the weights attained when optimizing using standard Markowitz MVO
+  ->BL_X(the portoflio weights attained when optimizing using Black-Litterman)
+-Create a script that will automatically save the .png figures into 
+the image folder and label the file appropriately.
+
 }
