@@ -105,8 +105,6 @@ for i = 1:size(h,2);
 
     if strcmp(h{1,i},'Black-Litterman')
         %Call function to return the Black-Litterman expected returns
-         [BL_tau BL_P BL_Q] = generate_BL_views(n_assets)
-
           [BL_Er, BL_sigma,BL_pi,BL_omega,rac]=...
            BL_expected_returns(data, market, market_caps,...
 									   BL_tau, BL_P, BL_Q, end_pred, PE_ratios);

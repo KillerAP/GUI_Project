@@ -1,6 +1,6 @@
 function [BL_Er, BL_sigma, BL_pi, BL_omega,rac] = ...
 	BL_expected_returns(data, market, market_caps,...
-						BL_tau, BL_P, BL_Q, end_pred)
+						BL_tau, BL_P, BL_Q, end_pred, PE_ratios)
 
 	%obtain the covariance of expected retursn of the data (BL_sigma)
 	r_it = (data(2:end_pred,:)./data(1:end_pred-1,:)) - 1;
@@ -20,7 +20,7 @@ function [BL_Er, BL_sigma, BL_pi, BL_omega,rac] = ...
     rac = risk_aversion_coefficient;
 
 	%calculating portion investmen in each asset, weighted by market capitalization
-	[cap_weights,available_market_caps]=capweights(market_caps);
+	[cap_weights,available_market_caps]=capweights(market_caps, PE_ratios);
 
 	%Calculate the implied excess equilibrium return vector (BL_Pi)
 	%This is the Inverse optimization step

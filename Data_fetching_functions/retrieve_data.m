@@ -1,4 +1,4 @@
-function [asset_data assets_with_marketcaps market_data market_caps etf_data min_days] = retrieve_data(assets, market, etf, start_date, end_date);
+function [asset_data assets_with_marketcaps market_data market_caps etf_data min_days PE_ratios] = retrieve_data(assets, market, etf, start_date, end_date);
 %% ACQUIRE DATA FROM YAHOO FINANCE
 % Collect relevant asset data from Yahoo Finance
 Connect = yahoo;
@@ -16,6 +16,10 @@ for i = 1:8
 
 	market_cap_string{i}=data{i}.MarketCapitalization;
 	market_caps{i}=marketcap_string_to_num(market_cap_string{i});
+    
+    PE_ratio_string{i} = data{i}.PERatio;
+    PE_ratios{i} = PERatio_string_to_num(PE_ratio_string{i});
+    
   	temp{i} = fetch(Connect, assets{i}, 'Close',start_date,end_date);
 
     disp(i);
@@ -43,7 +47,7 @@ count=1;
 assets_with_marketcaps=[];
 
 for i = 1:8
-	if  (market_caps{i}~='NaN')
+	if  (market_caps{i}~='NaN') & (PE_ratios{i} ~= 'NaN');
 	    asset_data(:,count) = temp{i}(1:min_days,2);
 	    date_data(:,count) = cellstr(datestr(temp{i}(1:min_days,1))); 
 	    count=count+1;
