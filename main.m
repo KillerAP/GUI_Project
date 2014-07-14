@@ -105,7 +105,7 @@ for i = 1:size(h,2);
         hold all
     end
     if strcmp(h{1,i}, 'One Period MVO')
-       [MVO_x, MVO_var, oneperiod_MVO_returns, oneperiod_MVO_prices]=...
+       [MVO_x, MVO_var, oneperiod_MVO_returns, MVO_prices]=...
            one_period_MVO(data, min_days, end_pred, initial_wealth, desired_return_range,n_assets);
         plot(1:length(oneperiod_MVO_returns),oneperiod_MVO_returns, '-m');
         hold all
@@ -148,10 +148,30 @@ for i = 1:size(h,2);
     end
 
 end
+
 grid on;
+
+T= table(MVO_x, BL_x);
 h=legend(h);
-4
-%This section creates tables of important variables
+
+%This section creates _ tables of important variables
+%and creates a second figure showing the table and comparison of
+% Table 1. Black- litterman Parameters 
+% -> BL_tau (uncertainty),
+% -> BL_P   (identifies assets involved in the views)
+% -> BL_Q   (matrice giving numerical returns associated with each view)
+% -> BL_Er  (expected returns obtained from reverse optimization)
+% -> BL_sigma (covariance of expected returns)
+% -> RAC    (risk aversion coefficient)
+% -> BL_pi  (implied excess equililbrium return vector)
+% -> BL_omega (covariance matrix representing uncertainty in each view)
+
+%Table 2. Mean-Variance optimization Vs. Black-Litterman
+% Columns are MVO & BLack-Litterman (Rows are shown below)
+% -Portfolio Allocation: MVO_x & BL_X
+% - Start Date, End date (AT TOP OF TABLE)
+% -Portfolio Value at End of Time Period: MVO_prices(diff_days+1) BL_portfolio_prices(diff_days+1)
+
 toc
 %h = legend('Single Factor MVO', 'One period MAD','One period MVO', 'Market Return','ETF return');
 %}
